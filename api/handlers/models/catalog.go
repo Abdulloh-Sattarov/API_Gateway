@@ -1,23 +1,22 @@
 package models
 
 type Category struct {
-	CategoryId     string `json:"category_id"`
+	CategoryId     string `json:"categoryId"`
 	Name           string `json:"name"`
-	ParentUuid     string `json:"parent_uuid"`
-	ParentCategory string `json:"parent_category"`
-	CreatedAt      string `json:"created_at"`
-	UpdatedAt      string `json:"updated_at"`
+	ParentUuid     string `json:"parentUuid"`
+	ParentCategory string `json:"parentCategory"`
+	CreatedAt      string `json:"createdAt"`
+	UpdatedAt      string `json:"updatedAt"`
 }
 
 type CreateCategory struct {
-	CategoryId string `json:"category_id"`
 	Name       string `json:"name"`
-	ParentUuid string `json:"parent_uuid"`
+	ParentUuid string `json:"parentUuid"`
 }
 
 type UpdateCategory struct {
 	Name       string `json:"name"`
-	ParentUuid string `json:"parent_uuid"`
+	ParentUuid string `json:"parentUuid"`
 }
 
 type ListCategories struct {
