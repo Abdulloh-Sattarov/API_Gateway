@@ -2,6 +2,7 @@ package v1
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -298,7 +299,7 @@ func (h *handlerV1) DeleteAuthor(c *gin.Context) {
 // @Tags category
 // @Accept  json
 // @Produce  json
-// @Param Category request body models.CreateCategory true "categoryCreateRequest"
+// @Param category request body models.CreateCategory true "categoryCreateRequest"
 // @Success 200 {object} models.Category
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
@@ -322,6 +323,7 @@ func (h *handlerV1) CreateCategory(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
+	fmt.Println(body)
 	response, err := h.serviceManager.CatalogService().CreateCategory(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{

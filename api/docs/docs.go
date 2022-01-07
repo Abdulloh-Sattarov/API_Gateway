@@ -254,22 +254,22 @@ var doc = `{
         "models.Category": {
             "type": "object",
             "properties": {
-                "category_id": {
+                "categoryId": {
                     "type": "string"
                 },
-                "created_at": {
+                "createdAt": {
                     "type": "string"
                 },
                 "name": {
                     "type": "string"
                 },
-                "parent_category": {
+                "parentCategory": {
                     "type": "string"
                 },
-                "parent_uuid": {
+                "parentUuid": {
                     "type": "string"
                 },
-                "updated_at": {
+                "updatedAt": {
                     "type": "string"
                 }
             }
@@ -277,13 +277,10 @@ var doc = `{
         "models.CreateCategory": {
             "type": "object",
             "properties": {
-                "category_id": {
-                    "type": "string"
-                },
                 "name": {
                     "type": "string"
                 },
-                "parent_uuid": {
+                "parentUuid": {
                     "type": "string"
                 }
             }
@@ -321,7 +318,7 @@ var doc = `{
                 "name": {
                     "type": "string"
                 },
-                "parent_uuid": {
+                "parentUuid": {
                     "type": "string"
                 }
             }

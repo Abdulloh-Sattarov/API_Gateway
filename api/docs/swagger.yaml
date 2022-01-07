@@ -1,26 +1,24 @@
 definitions:
   models.Category:
     properties:
-      category_id:
+      categoryId:
         type: string
-      created_at:
+      createdAt:
         type: string
       name:
         type: string
-      parent_category:
+      parentCategory:
         type: string
-      parent_uuid:
+      parentUuid:
         type: string
-      updated_at:
+      updatedAt:
         type: string
     type: object
   models.CreateCategory:
     properties:
-      category_id:
-        type: string
       name:
         type: string
-      parent_uuid:
+      parentUuid:
         type: string
     type: object
   models.Error:
@@ -44,7 +42,7 @@ definitions:
     properties:
       name:
         type: string
-      parent_uuid:
+      parentUuid:
         type: string
     type: object
 info:
