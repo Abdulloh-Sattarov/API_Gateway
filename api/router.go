@@ -2,7 +2,10 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 
+	_ "github.com/abdullohsattorov/API_Gateway/api/docs" // swag
 	v1 "github.com/abdullohsattorov/API_Gateway/api/handlers/v1"
 	"github.com/abdullohsattorov/API_Gateway/config"
 	"github.com/abdullohsattorov/API_Gateway/pkg/logger"
@@ -50,6 +53,9 @@ func New(option Option) *gin.Engine {
 	api.DELETE("/catalogs/books/:id", handlerV1.DeleteBook)
 	api.DELETE("/catalogs/authors/:id", handlerV1.DeleteAuthor)
 	api.DELETE("/catalogs/categories/:id", handlerV1.DeleteCategory)
+
+	url := ginSwagger.URL("swagger/doc.json") // The url pointing to API definition
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 
 	return router
 }
