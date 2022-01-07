@@ -23,6 +23,293 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/v1/catalogs": {
+            "get": {
+                "description": "This API for getting list of catalogs",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "catalogs"
+                ],
+                "summary": "List",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Authors",
+                        "name": "authors",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Categories",
+                        "name": "categories",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.List"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/catalogs/books": {
+            "get": {
+                "description": "This API for getting list of books",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "book"
+                ],
+                "summary": "ListBooks",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListBooks"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/catalogs/books/": {
+            "post": {
+                "description": "This API for creating a new book",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "book"
+                ],
+                "summary": "CreateBook",
+                "parameters": [
+                    {
+                        "description": "bookCreateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBook"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Book"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/catalogs/books/{id}": {
+            "get": {
+                "description": "This API for getting book detail",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "book"
+                ],
+                "summary": "GetBook",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "BookId",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Book"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "This API for updating book",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "category"
+                ],
+                "summary": "UpdateBook",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "BookId",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "bookUpdateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UpdateBook"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "This API for deleting book",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "book"
+                ],
+                "summary": "DeleteBook",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "BookId",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/catalogs/categories": {
             "get": {
                 "description": "This API for getting list of categories",
@@ -251,6 +538,52 @@ var doc = `{
         }
     },
     "definitions": {
+        "models.Author": {
+            "type": "object",
+            "properties": {
+                "AuthorId": {
+                    "type": "string"
+                },
+                "CreatedAt": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "UpdatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Book": {
+            "type": "object",
+            "properties": {
+                "AuthorId": {
+                    "type": "string"
+                },
+                "BookId": {
+                    "type": "string"
+                },
+                "CategoryId": {
+                    "type": "string"
+                },
+                "CategoryName": {
+                    "type": "string"
+                },
+                "CreatedAt": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Price": {
+                    "type": "number"
+                },
+                "UpdatedAt": {
+                    "type": "string"
+                }
+            }
+        },
         "models.Category": {
             "type": "object",
             "properties": {
@@ -274,6 +607,23 @@ var doc = `{
                 }
             }
         },
+        "models.CreateBook": {
+            "type": "object",
+            "properties": {
+                "AuthorId": {
+                    "type": "string"
+                },
+                "CategoryId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Price": {
+                    "type": "number"
+                }
+            }
+        },
         "models.CreateCategory": {
             "type": "object",
             "properties": {
@@ -293,6 +643,34 @@ var doc = `{
                 }
             }
         },
+        "models.List": {
+            "type": "object",
+            "properties": {
+                "Author": {
+                    "$ref": "#/definitions/models.Author"
+                },
+                "Book": {
+                    "$ref": "#/definitions/models.Book"
+                },
+                "Categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Category"
+                    }
+                }
+            }
+        },
+        "models.ListBooks": {
+            "type": "object",
+            "properties": {
+                "Books": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Book"
+                    }
+                }
+            }
+        },
         "models.ListCategories": {
             "type": "object",
             "properties": {
@@ -309,6 +687,23 @@ var doc = `{
             "properties": {
                 "error": {
                     "$ref": "#/definitions/models.Error"
+                }
+            }
+        },
+        "models.UpdateBook": {
+            "type": "object",
+            "properties": {
+                "AuthorId": {
+                    "type": "string"
+                },
+                "CategoryId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Price": {
+                    "type": "number"
                 }
             }
         },

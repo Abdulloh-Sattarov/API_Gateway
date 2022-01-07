@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="53783f12-814d-4741-bcf1-c32061b4faee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/KyleBanks/depth/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/KyleBanks/depth/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/KyleBanks/depth/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/KyleBanks/depth/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/KyleBanks/depth/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/KyleBanks/depth/depth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/KyleBanks/depth/pkg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/purell/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/purell/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/purell/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/purell/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/purell/purell.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/urlesc/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/urlesc/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/urlesc/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/PuerkitoBio/urlesc/urlesc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonpointer/pointer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/.golangci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/jsonreference/reference.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/.golangci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/appveyor.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/bindata.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/cache.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/contact_info.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/debug.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/errors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/expander.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/external_docs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/header.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/info.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/items.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/license.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/normalizer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/normalizer_nonwindows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/normalizer_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/operation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/parameter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/path_item.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/paths.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/properties.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/ref.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/resolver.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/responses.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/schema.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/schema_loader.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/security_scheme.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/spec.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/swagger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/tag.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/validations.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/spec/xml_object.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/.golangci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/convert.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/convert_types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/json.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/loading.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/name_lexem.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/net.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/path.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/post_go18.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/post_go19.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/pre_go18.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/pre_go19.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/split.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/go-openapi/swag/yaml.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/josharian/intern/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/josharian/intern/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/josharian/intern/intern.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/josharian/intern/license.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/mailru/easyjson/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/mailru/easyjson/buffer/pool.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/mailru/easyjson/jlexer/bytestostr.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/mailru/easyjson/jlexer/bytestostr_nounsafe.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/mailru/easyjson/jlexer/error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/mailru/easyjson/jlexer/lexer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/mailru/easyjson/jwriter/writer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/ab0x.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__favicon-16x16.png.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__favicon-32x32.png.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__index.html.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__oauth2-redirect.html.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui-bundle.js.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui-bundle.js.map.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui-es-bundle-core.js.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui-es-bundle-core.js.map.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui-es-bundle.js.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui-es-bundle.js.map.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui-standalone-preset.js.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui-standalone-preset.js.map.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui.css.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui.css.map.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui.js.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/b0xfile__swagger-ui.js.map.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/files/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/.goreleaser.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/b0x.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/gin-swagger/swagger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/.goreleaser.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/README_zh-CN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/field_parser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/formater.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/license" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/operation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/packages.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/parser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/schema.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/swagger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/swaggo/swag/version.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/if.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/internal/xml/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/internal/xml/marshal.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/internal/xml/read.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/internal/xml/typeinfo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/internal/xml/xml.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/lock.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/prop.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/webdav.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/net/webdav/xml.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/execabs/execabs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ifreq_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/kind_string.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/tables10.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/tables11.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/tables12.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/tables13.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/tables9.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/transform.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/trieval.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/text/width/width.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/AUTHORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/CONTRIBUTORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/PATENTS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/ast/astutil/enclosing.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/ast/astutil/imports.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/ast/astutil/rewrite.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/ast/astutil/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/buildutil/allpackages.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/buildutil/fakecontext.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/buildutil/overlay.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/buildutil/tags.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/buildutil/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/internal/cgo/cgo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/internal/cgo/cgo_pkgconfig.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/loader/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/loader/loader.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/loader/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/internal/typeparams/common.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/internal/typeparams/enabled_go117.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/internal/typeparams/enabled_go118.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/internal/typeparams/typeparams_go117.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/golang.org/x/tools/internal/typeparams/typeparams_go118.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/API_Gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/API_Gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/docs/docs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/docs/swagger.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/docs/swagger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/handlers/models/catalog.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handlers/models/catalog.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/handlers/v1/catalog.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handlers/v1/catalog.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="23JwCpBNdbzM4uI3hhZao5xRHa0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.format.on.save.advertiser.fired" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="goland.project.structure" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="API_Gateway" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="API_Gateway" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

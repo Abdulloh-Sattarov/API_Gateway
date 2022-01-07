@@ -1,4 +1,34 @@
 definitions:
+  models.Author:
+    properties:
+      AuthorId:
+        type: string
+      CreatedAt:
+        type: string
+      Name:
+        type: string
+      UpdatedAt:
+        type: string
+    type: object
+  models.Book:
+    properties:
+      AuthorId:
+        type: string
+      BookId:
+        type: string
+      CategoryId:
+        type: string
+      CategoryName:
+        type: string
+      CreatedAt:
+        type: string
+      Name:
+        type: string
+      Price:
+        type: number
+      UpdatedAt:
+        type: string
+    type: object
   models.Category:
     properties:
       categoryId:
@@ -14,6 +44,17 @@ definitions:
       updatedAt:
         type: string
     type: object
+  models.CreateBook:
+    properties:
+      AuthorId:
+        type: string
+      CategoryId:
+        type: string
+      Name:
+        type: string
+      Price:
+        type: number
+    type: object
   models.CreateCategory:
     properties:
       name:
@@ -25,6 +66,24 @@ definitions:
     properties:
       message:
         type: string
+    type: object
+  models.List:
+    properties:
+      Author:
+        $ref: '#/definitions/models.Author'
+      Book:
+        $ref: '#/definitions/models.Book'
+      Categories:
+        items:
+          $ref: '#/definitions/models.Category'
+        type: array
+    type: object
+  models.ListBooks:
+    properties:
+      Books:
+        items:
+          $ref: '#/definitions/models.Book'
+        type: array
     type: object
   models.ListCategories:
     properties:
@@ -38,6 +97,17 @@ definitions:
       error:
         $ref: '#/definitions/models.Error'
     type: object
+  models.UpdateBook:
+    properties:
+      AuthorId:
+        type: string
+      CategoryId:
+        type: string
+      Name:
+        type: string
+      Price:
+        type: number
+    type: object
   models.UpdateCategory:
     properties:
       name:
@@ -48,6 +118,195 @@ definitions:
 info:
   contact: {}
 paths:
+  /v1/catalogs:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of catalogs
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      - description: Authors
+        in: query
+        name: authors
+        type: string
+      - description: Categories
+        in: query
+        name: categories
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.List'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: List
+      tags:
+      - catalogs
+  /v1/catalogs/books:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of books
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListBooks'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: ListBooks
+      tags:
+      - book
+  /v1/catalogs/books/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new book
+      parameters:
+      - description: bookCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateBook'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Book'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: CreateBook
+      tags:
+      - book
+  /v1/catalogs/books/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting book
+      parameters:
+      - description: BookId
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DeleteBook
+      tags:
+      - book
+    get:
+      consumes:
+      - application/json
+      description: This API for getting book detail
+      parameters:
+      - description: BookId
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Book'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GetBook
+      tags:
+      - book
+    put:
+      consumes:
+      - application/json
+      description: This API for updating book
+      parameters:
+      - description: BookId
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: bookUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateBook'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UpdateBook
+      tags:
+      - category
   /v1/catalogs/categories:
     get:
       consumes:
