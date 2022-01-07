@@ -1,0 +1,202 @@
+definitions:
+  models.Category:
+    properties:
+      category_id:
+        type: string
+      created_at:
+        type: string
+      name:
+        type: string
+      parent_category:
+        type: string
+      parent_uuid:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.CreateCategory:
+    properties:
+      category_id:
+        type: string
+      name:
+        type: string
+      parent_uuid:
+        type: string
+    type: object
+  models.Error:
+    properties:
+      message:
+        type: string
+    type: object
+  models.ListCategories:
+    properties:
+      categories:
+        items:
+          $ref: '#/definitions/models.Category'
+        type: array
+    type: object
+  models.StandardErrorModel:
+    properties:
+      error:
+        $ref: '#/definitions/models.Error'
+    type: object
+  models.UpdateCategory:
+    properties:
+      name:
+        type: string
+      parent_uuid:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/catalogs/categories:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of categories
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListCategories'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: ListCategories
+      tags:
+      - category
+  /v1/catalogs/categories/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new category
+      parameters:
+      - description: categoryCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateCategory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Category'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: CreateCategory
+      tags:
+      - category
+  /v1/catalogs/categories/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting category
+      parameters:
+      - description: CategoryId
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DeleteCategory
+      tags:
+      - category
+    get:
+      consumes:
+      - application/json
+      description: This API for getting category detail
+      parameters:
+      - description: CategoryId
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Category'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GetCategory
+      tags:
+      - category
+    put:
+      consumes:
+      - application/json
+      description: This API for updating category
+      parameters:
+      - description: CategoryId
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: categoryUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateCategory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UpdateCategory
+      tags:
+      - category
+swagger: "2.0"

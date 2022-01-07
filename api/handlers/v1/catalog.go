@@ -292,8 +292,17 @@ func (h *handlerV1) DeleteAuthor(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// ----------------------------------------------
-
+// CreateCategory ...
+// @Summary CreateCategory
+// @Description This API for creating a new category
+// @Tags category
+// @Accept  json
+// @Produce  json
+// @Param Category request body models.CreateCategory true "categoryCreateRequest"
+// @Success 200 {object} models.Category
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+// @Router /v1/catalogs/categories/ [post]
 func (h *handlerV1) CreateCategory(c *gin.Context) {
 	var (
 		body        pb.Category
@@ -325,6 +334,17 @@ func (h *handlerV1) CreateCategory(c *gin.Context) {
 	c.JSON(http.StatusCreated, response)
 }
 
+// GetCategory ...
+// @Summary GetCategory
+// @Description This API for getting category detail
+// @Tags category
+// @Accept  json
+// @Produce  json
+// @Param id path string true "CategoryId"
+// @Success 200 {object} models.Category
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+// @Router /v1/catalogs/categories/{id} [get]
 func (h *handlerV1) GetCategory(c *gin.Context) {
 	var jspbMarhsal protojson.MarshalOptions
 	jspbMarhsal.UseProtoNames = true
@@ -345,6 +365,18 @@ func (h *handlerV1) GetCategory(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// ListCategories ...
+// @Summary ListCategories
+// @Description This API for getting list of categories
+// @Tags category
+// @Accept  json
+// @Produce  json
+// @Param page query string false "Page"
+// @Param limit query string false "Limit"
+// @Success 200 {object} models.ListCategories
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+// @Router /v1/catalogs/categories [get]
 func (h *handlerV1) ListCategories(c *gin.Context) {
 	queryParam := c.Request.URL.Query()
 	params, errStr := utils.ParseQueryParams(queryParam)
@@ -380,6 +412,18 @@ func (h *handlerV1) ListCategories(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// UpdateCategory ...
+// @Summary UpdateCategory
+// @Description This API for updating category
+// @Tags category
+// @Accept  json
+// @Produce  json
+// @Param id path string true "CategoryId"
+// @Param User request body models.UpdateCategory true "categoryUpdateRequest"
+// @Success 200
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+// @Router /v1/catalogs/categories/{id} [put]
 func (h *handlerV1) UpdateCategory(c *gin.Context) {
 	var (
 		body        pb.Category
@@ -412,6 +456,17 @@ func (h *handlerV1) UpdateCategory(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// DeleteCategory ...
+// @Summary DeleteCategory
+// @Description This API for deleting category
+// @Tags category
+// @Accept  json
+// @Produce  json
+// @Param id path string true "CategoryId"
+// @Success 200
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+// @Router /v1/catalogs/categories/{id} [delete]
 func (h *handlerV1) DeleteCategory(c *gin.Context) {
 	var jspbMarshal protojson.MarshalOptions
 	jspbMarshal.UseProtoNames = true
