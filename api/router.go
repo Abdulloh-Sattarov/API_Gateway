@@ -51,8 +51,6 @@ func New(option Option) *gin.Engine {
 	api.PUT("/catalogs/authors/:id", handlerV1.UpdateAuthor)
 	api.DELETE("/catalogs/authors/:id", handlerV1.DeleteAuthor)
 
-	api.GET("/catalogs", handlerV1.List)
-
 	api.POST("/orders", handlerV1.CreateOrder)
 	api.GET("/orders/:id", handlerV1.GetOrder)
 	api.GET("/orders", handlerV1.ListOrders)

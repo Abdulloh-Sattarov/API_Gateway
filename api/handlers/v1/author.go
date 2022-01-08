@@ -8,28 +8,29 @@ import (
 	"github.com/gin-gonic/gin"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	pb "github.com/abdullohsattorov/API_Gateway/genproto/order_service"
+	pb "github.com/abdullohsattorov/API_Gateway/genproto/catalog_service"
 	l "github.com/abdullohsattorov/API_Gateway/pkg/logger"
 	"github.com/abdullohsattorov/API_Gateway/pkg/utils"
 )
 
-// CreateOrder ...
-// @Summary CreateOrder
-// @Description This API for creating a new order
-// @Tags order
-// @Accept  json
-// @Produce  json
-// @Param order request body models.CreateOrder true "orderCreateRequest"
-// @Success 200 {object} models.Order
+// CreateAuthor ...
+// @Summary CreateAuthor
+// @Description This API for creating a new author
+// @Tags author
+// @Accept json
+// @Produce json
+// @Param author request body models.CUAuthor true "authorCreateRequest"
+// @Success 200 {object} models.Author
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders/ [post]
-func (h *handlerV1) CreateOrder(c *gin.Context) {
+// @Router /v1/catalogs/authors/ [post]
+func (h *handlerV1) CreateAuthor(c *gin.Context) {
 	var (
-		body        pb.OrderReq
+		body        pb.Author
 		jspbMarshal protojson.MarshalOptions
 	)
 	jspbMarshal.UseProtoNames = true
+
 	err := c.ShouldBindJSON(&body)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -38,76 +39,73 @@ func (h *handlerV1) CreateOrder(c *gin.Context) {
 		h.log.Error("failed to bind json", l.Error(err))
 		return
 	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().Create(ctx, &body)
+	response, err := h.serviceManager.CatalogService().CreateAuthor(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to create order", l.Error(err))
+		h.log.Error("failed to create author", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusCreated, response)
 }
 
-// GetOrder ...
-// @Summary GetOrder
-// @Description This API for getting order detail
-// @Tags order
-// @Accept  json
-// @Produce  json
-// @Param id path string true "OrderId"
-// @Success 200 {object} models.Order
+// GetAuthor ...
+// @Summary GetAuthor
+// @Description This API for getting author detail
+// @Tags author
+// @Accept json
+// @Produce json
+// @Param id path string true "AuthorId"
+// @Success 200 {object} models.Author
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders/{id} [get]
-func (h *handlerV1) GetOrder(c *gin.Context) {
-	var jspbMarshal protojson.MarshalOptions
-	jspbMarshal.UseProtoNames = true
+// @Router /v1/catalogs/authors/{id} [get]
+func (h *handlerV1) GetAuthor(c *gin.Context) {
+	var jspbMarhsal protojson.MarshalOptions
+	jspbMarhsal.UseProtoNames = true
 
 	guid := c.Param("id")
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().Get(
-		ctx, &pb.ByIdReq{
-			Id: guid,
-		})
+	response, err := h.serviceManager.CatalogService().GetAuthor(ctx, &pb.ByIdReq{Id: guid})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to get order", l.Error(err))
+		h.log.Error("failed to get author", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// ListOrders ...
-// @Summary ListOrders
-// @Description This API for getting list of order
-// @Tags order
-// @Accept  json
-// @Produce  json
+// ListAuthors ...
+// @Summary ListAuthors
+// @Description This API for getting list of authors
+// @Tags author
+// @Accept json
+// @Produce json
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
-// @Success 200 {object} models.ListOrders
+// @Success 200 {object} models.ListAuthors
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders [get]
-func (h *handlerV1) ListOrders(c *gin.Context) {
+// @Router /v1/catalogs/authors [get]
+func (h *handlerV1) ListAuthors(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
-
 	params, errStr := utils.ParseQueryParams(queryParams)
 	if errStr != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"err": errStr[0],
+			"error": errStr[0],
 		})
-		h.log.Error("failed to parse query params json" + errStr[0])
+		h.log.Error("failed to pars query params json" + errStr[0])
 		return
 	}
 
@@ -117,8 +115,9 @@ func (h *handlerV1) ListOrders(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().List(
-		ctx, &pb.ListReq{
+	response, err := h.serviceManager.CatalogService().ListAuthor(
+		ctx,
+		&pb.ListReq{
 			Limit: params.Limit,
 			Page:  params.Page,
 		},
@@ -127,28 +126,28 @@ func (h *handlerV1) ListOrders(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to list orders", l.Error(err))
+		h.log.Error("failed to list authors", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// UpdateOrder ...
-// @Summary UpdateOrder
-// @Description This API for updating order
-// @Tags order
-// @Accept  json
-// @Produce  json
-// @Param id path string true "OrderId"
-// @Param User request body models.UpdateOrder true "orderUpdateRequest"
-// @Success 200 {object} models.Order
+// UpdateAuthor ...
+// @Summary UpdateAuthor
+// @Description This API for updating author
+// @Tags author
+// @Accept json
+// @Produce json
+// @Param id path string true "AuthorId"
+// @Param User request body models.CUAuthor true "BookUpdateRequest"
+// @Success 200 {object} models.Author
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders/{id} [put]
-func (h *handlerV1) UpdateOrder(c *gin.Context) {
+// @Router /v1/catalogs/authors/{id} [put]
+func (h *handlerV1) UpdateAuthor(c *gin.Context) {
 	var (
-		body        pb.OrderReq
+		body        pb.Author
 		jspbMarshal protojson.MarshalOptions
 	)
 	jspbMarshal.UseProtoNames = true
@@ -161,35 +160,35 @@ func (h *handlerV1) UpdateOrder(c *gin.Context) {
 		h.log.Error("failed to bind json", l.Error(err))
 		return
 	}
-	body.OrderId = c.Param("id")
+	body.AuthorId = c.Param("id")
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().Update(ctx, &body)
+	response, err := h.serviceManager.CatalogService().UpdateAuthor(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to update order", l.Error(err))
+		h.log.Error("failed to update author", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// DeleteOrder ...
-// @Summary DeleteOrder
-// @Description This API for deleting order
-// @Tags order
-// @Accept  json
-// @Produce  json
-// @Param id path string true "OrderId"
+// DeleteAuthor ...
+// @Summary DeleteAuthor
+// @Description This API for deleting the author
+// @Tags author
+// @Accept json
+// @Produce json
+// @Param id path string true "AuthorId"
 // @Success 200
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders/{id} [delete]
-func (h *handlerV1) DeleteOrder(c *gin.Context) {
+// @Router /v1/catalogs/authors/{id} [delete]
+func (h *handlerV1) DeleteAuthor(c *gin.Context) {
 	var jspbMarshal protojson.MarshalOptions
 	jspbMarshal.UseProtoNames = true
 
@@ -197,12 +196,12 @@ func (h *handlerV1) DeleteOrder(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().Delete(ctx, &pb.ByIdReq{Id: guid})
+	response, err := h.serviceManager.CatalogService().DeleteAuthor(ctx, &pb.ByIdReq{Id: guid})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to delete order", l.Error(err))
+		h.log.Error("failed to delete author", l.Error(err))
 		return
 	}
 
