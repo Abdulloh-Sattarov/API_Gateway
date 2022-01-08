@@ -450,7 +450,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "category"
+                    "book"
                 ],
                 "summary": "UpdateBook",
                 "parameters": [

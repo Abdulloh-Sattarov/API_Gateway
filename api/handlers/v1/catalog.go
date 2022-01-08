@@ -138,7 +138,7 @@ func (h *handlerV1) ListBooks(c *gin.Context) {
 // UpdateBook ...
 // @Summary UpdateBook
 // @Description This API for updating book
-// @Tags category
+// @Tags book
 // @Accept  json
 // @Produce  json
 // @Param id path string true "BookId"

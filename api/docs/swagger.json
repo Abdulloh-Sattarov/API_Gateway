@@ -431,7 +431,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "category"
+                    "book"
                 ],
                 "summary": "UpdateBook",
                 "parameters": [

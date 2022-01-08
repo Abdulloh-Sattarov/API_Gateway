@@ -506,7 +506,7 @@ paths:
             $ref: '#/definitions/models.StandardErrorModel'
       summary: UpdateBook
       tags:
-      - category
+      - book
   /v1/catalogs/categories:
     get:
       consumes:
