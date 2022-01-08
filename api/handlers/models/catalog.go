@@ -59,6 +59,14 @@ type Author struct {
 	UpdatedAt string `json:"UpdatedAt"`
 }
 
+type CUAuthor struct {
+	Name string `json:"Name"`
+}
+
+type ListAuthors struct {
+	Authors []Author `json:"Authors"`
+}
+
 type List struct {
 	Author     Author     `json:"Author"`
 	Book       Book       `json:"Book"`
