@@ -20,3 +20,7 @@ pull-submodule:
 swag-gen:
 	echo ${REGISTRY}
 	swag init -g api/router.go -o api/docs
+
+run-swag:
+	sudo apt-get install -y golang-github-go-openapi-swag-dev
+	go get -v -u github.com/swaggo/swag/cmd/swag
