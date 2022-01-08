@@ -8,28 +8,29 @@ import (
 	"github.com/gin-gonic/gin"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	pb "github.com/abdullohsattorov/API_Gateway/genproto/order_service"
+	pb "github.com/abdullohsattorov/API_Gateway/genproto/catalog_service"
 	l "github.com/abdullohsattorov/API_Gateway/pkg/logger"
 	"github.com/abdullohsattorov/API_Gateway/pkg/utils"
 )
 
-// CreateOrder ...
-// @Summary CreateOrder
-// @Description This API for creating a new order
-// @Tags order
+// CreateCategory ...
+// @Summary CreateCategory
+// @Description This API for creating a new category
+// @Tags category
 // @Accept  json
 // @Produce  json
-// @Param order request body models.CreateOrder true "orderCreateRequest"
-// @Success 200 {object} models.Order
+// @Param category request body models.CreateCategory true "categoryCreateRequest"
+// @Success 200 {object} models.Category
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders/ [post]
-func (h *handlerV1) CreateOrder(c *gin.Context) {
+// @Router /v1/catalogs/categories/ [post]
+func (h *handlerV1) CreateCategory(c *gin.Context) {
 	var (
-		body        pb.OrderReq
+		body        pb.Category
 		jspbMarshal protojson.MarshalOptions
 	)
 	jspbMarshal.UseProtoNames = true
+
 	err := c.ShouldBindJSON(&body)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -38,74 +39,71 @@ func (h *handlerV1) CreateOrder(c *gin.Context) {
 		h.log.Error("failed to bind json", l.Error(err))
 		return
 	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().Create(ctx, &body)
+	response, err := h.serviceManager.CatalogService().CreateCategory(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to create order", l.Error(err))
+		h.log.Error("failed to create category", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusCreated, response)
 }
 
-// GetOrder ...
-// @Summary GetOrder
-// @Description This API for getting order detail
-// @Tags order
+// GetCategory ...
+// @Summary GetCategory
+// @Description This API for getting category detail
+// @Tags category
 // @Accept  json
 // @Produce  json
-// @Param id path string true "OrderId"
-// @Success 200 {object} models.Order
+// @Param id path string true "CategoryId"
+// @Success 200 {object} models.Category
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders/{id} [get]
-func (h *handlerV1) GetOrder(c *gin.Context) {
-	var jspbMarshal protojson.MarshalOptions
-	jspbMarshal.UseProtoNames = true
+// @Router /v1/catalogs/categories/{id} [get]
+func (h *handlerV1) GetCategory(c *gin.Context) {
+	var jspbMarhsal protojson.MarshalOptions
+	jspbMarhsal.UseProtoNames = true
 
 	guid := c.Param("id")
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().Get(
-		ctx, &pb.ByIdReq{
-			Id: guid,
-		})
+	response, err := h.serviceManager.CatalogService().GetCategory(ctx, &pb.ByIdReq{Id: guid})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to get order", l.Error(err))
+		h.log.Error("failed to get category", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// ListOrders ...
-// @Summary ListOrders
-// @Description This API for getting list of order
-// @Tags order
+// ListCategories ...
+// @Summary ListCategories
+// @Description This API for getting list of categories
+// @Tags category
 // @Accept  json
 // @Produce  json
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
-// @Success 200 {object} models.ListOrders
+// @Success 200 {object} models.ListCategories
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders [get]
-func (h *handlerV1) ListOrders(c *gin.Context) {
-	queryParams := c.Request.URL.Query()
-
-	params, errStr := utils.ParseQueryParams(queryParams)
+// @Router /v1/catalogs/categories [get]
+func (h *handlerV1) ListCategories(c *gin.Context) {
+	queryParam := c.Request.URL.Query()
+	params, errStr := utils.ParseQueryParams(queryParam)
 	if errStr != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"err": errStr[0],
+			"error": errStr[0],
 		})
 		h.log.Error("failed to parse query params json" + errStr[0])
 		return
@@ -117,8 +115,9 @@ func (h *handlerV1) ListOrders(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().List(
-		ctx, &pb.ListReq{
+	response, err := h.serviceManager.CatalogService().ListCategory(
+		ctx,
+		&pb.ListReq{
 			Limit: params.Limit,
 			Page:  params.Page,
 		},
@@ -127,28 +126,28 @@ func (h *handlerV1) ListOrders(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to list orders", l.Error(err))
+		h.log.Error("failed to list category", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// UpdateOrder ...
-// @Summary UpdateOrder
-// @Description This API for updating order
-// @Tags order
+// UpdateCategory ...
+// @Summary UpdateCategory
+// @Description This API for updating category
+// @Tags category
 // @Accept  json
 // @Produce  json
-// @Param id path string true "OrderId"
-// @Param User request body models.UpdateOrder true "orderUpdateRequest"
-// @Success 200 {object} models.Order
+// @Param id path string true "CategoryId"
+// @Param User request body models.UpdateCategory true "categoryUpdateRequest"
+// @Success 200
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders/{id} [put]
-func (h *handlerV1) UpdateOrder(c *gin.Context) {
+// @Router /v1/catalogs/categories/{id} [put]
+func (h *handlerV1) UpdateCategory(c *gin.Context) {
 	var (
-		body        pb.OrderReq
+		body        pb.Category
 		jspbMarshal protojson.MarshalOptions
 	)
 	jspbMarshal.UseProtoNames = true
@@ -161,35 +160,35 @@ func (h *handlerV1) UpdateOrder(c *gin.Context) {
 		h.log.Error("failed to bind json", l.Error(err))
 		return
 	}
-	body.OrderId = c.Param("id")
+	body.CategoryId = c.Param("id")
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().Update(ctx, &body)
+	response, err := h.serviceManager.CatalogService().UpdateCategory(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to update order", l.Error(err))
+		h.log.Error("failed to update category", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// DeleteOrder ...
-// @Summary DeleteOrder
-// @Description This API for deleting order
-// @Tags order
+// DeleteCategory ...
+// @Summary DeleteCategory
+// @Description This API for deleting category
+// @Tags category
 // @Accept  json
 // @Produce  json
-// @Param id path string true "OrderId"
+// @Param id path string true "CategoryId"
 // @Success 200
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-// @Router /v1/orders/{id} [delete]
-func (h *handlerV1) DeleteOrder(c *gin.Context) {
+// @Router /v1/catalogs/categories/{id} [delete]
+func (h *handlerV1) DeleteCategory(c *gin.Context) {
 	var jspbMarshal protojson.MarshalOptions
 	jspbMarshal.UseProtoNames = true
 
@@ -197,12 +196,12 @@ func (h *handlerV1) DeleteOrder(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.OrderService().Delete(ctx, &pb.ByIdReq{Id: guid})
+	response, err := h.serviceManager.CatalogService().DeleteCategory(ctx, &pb.ByIdReq{Id: guid})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to delete order", l.Error(err))
+		h.log.Error("failed to delete category", l.Error(err))
 		return
 	}
 

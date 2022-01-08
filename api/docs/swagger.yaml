@@ -79,17 +79,6 @@ definitions:
       message:
         type: string
     type: object
-  models.List:
-    properties:
-      Author:
-        $ref: '#/definitions/models.Author'
-      Book:
-        $ref: '#/definitions/models.Book'
-      Categories:
-        items:
-          $ref: '#/definitions/models.Category'
-        type: array
-    type: object
   models.ListAuthors:
     properties:
       Authors:
@@ -166,52 +155,10 @@ definitions:
         type: string
       Description:
         type: string
-      OrderId:
-        type: string
     type: object
 info:
   contact: {}
 paths:
-  /v1/catalogs:
-    get:
-      consumes:
-      - application/json
-      description: This API for getting list of catalogs
-      parameters:
-      - description: Page
-        in: query
-        name: page
-        type: string
-      - description: Limit
-        in: query
-        name: limit
-        type: string
-      - description: Authors
-        in: query
-        name: authors
-        type: string
-      - description: Categories
-        in: query
-        name: categories
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/models.List'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/models.StandardErrorModel'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/models.StandardErrorModel'
-      summary: List
-      tags:
-      - catalogs
   /v1/catalogs/authors:
     get:
       consumes:
@@ -259,6 +206,10 @@ paths:
       produces:
       - application/json
       responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Author'
         "400":
           description: Bad Request
           schema:
@@ -274,6 +225,7 @@ paths:
     delete:
       consumes:
       - application/json
+      description: This API for deleting the author
       parameters:
       - description: AuthorId
         in: path
@@ -283,6 +235,8 @@ paths:
       produces:
       - application/json
       responses:
+        "200":
+          description: ""
         "400":
           description: Bad Request
           schema:
@@ -369,6 +323,14 @@ paths:
       - description: Limit
         in: query
         name: limit
+        type: string
+      - description: Limit
+        in: query
+        name: authors
+        type: string
+      - description: Limit
+        in: query
+        name: category
         type: string
       produces:
       - application/json
@@ -793,7 +755,9 @@ paths:
       - application/json
       responses:
         "200":
-          description: ""
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Order'
         "400":
           description: Bad Request
           schema:

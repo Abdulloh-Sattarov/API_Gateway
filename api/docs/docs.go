@@ -23,67 +23,6 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/v1/catalogs": {
-            "get": {
-                "description": "This API for getting list of catalogs",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "catalogs"
-                ],
-                "summary": "List",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Page",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "description": "Limit",
-                        "name": "limit",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "description": "Authors",
-                        "name": "authors",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "description": "Categories",
-                        "name": "categories",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/models.List"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/models.StandardErrorModel"
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "schema": {
-                            "$ref": "#/definitions/models.StandardErrorModel"
-                        }
-                    }
-                }
-            }
-        },
         "/v1/catalogs/authors": {
             "get": {
                 "description": "This API for getting list of authors",
@@ -158,6 +97,12 @@ var doc = `{
                     }
                 ],
                 "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Author"
+                        }
+                    },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
@@ -268,6 +213,7 @@ var doc = `{
                 }
             },
             "delete": {
+                "description": "This API for deleting the author",
                 "consumes": [
                     "application/json"
                 ],
@@ -288,6 +234,9 @@ var doc = `{
                     }
                 ],
                 "responses": {
+                    "200": {
+                        "description": ""
+                    },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
@@ -327,6 +276,18 @@ var doc = `{
                         "type": "string",
                         "description": "Limit",
                         "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Limit",
+                        "name": "authors",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Limit",
+                        "name": "category",
                         "in": "query"
                     }
                 ],
@@ -928,7 +889,10 @@ var doc = `{
                 ],
                 "responses": {
                     "200": {
-                        "description": ""
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Order"
+                        }
                     },
                     "400": {
                         "description": "Bad Request",
@@ -1110,23 +1074,6 @@ var doc = `{
                 }
             }
         },
-        "models.List": {
-            "type": "object",
-            "properties": {
-                "Author": {
-                    "$ref": "#/definitions/models.Author"
-                },
-                "Book": {
-                    "$ref": "#/definitions/models.Book"
-                },
-                "Categories": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/models.Category"
-                    }
-                }
-            }
-        },
         "models.ListAuthors": {
             "type": "object",
             "properties": {
@@ -1243,9 +1190,6 @@ var doc = `{
                     "type": "string"
                 },
                 "Description": {
-                    "type": "string"
-                },
-                "OrderId": {
                     "type": "string"
                 }
             }

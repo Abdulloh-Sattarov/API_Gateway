@@ -12,7 +12,6 @@ type Order struct {
 }
 
 type UpdateOrder struct {
-	OrderId     string `json:"OrderId"`
 	BookId      string `json:"BookId"`
 	Description string `json:"Description"`
 }
