@@ -17,7 +17,9 @@ definitions:
       BookId:
         type: string
       CategoryId:
-        type: string
+        items:
+          type: string
+        type: array
       CategoryName:
         type: string
       CreatedAt:
@@ -54,7 +56,9 @@ definitions:
       AuthorId:
         type: string
       CategoryId:
-        type: string
+        items:
+          type: string
+        type: array
       Name:
         type: string
       Price:

@@ -977,7 +977,10 @@ var doc = `{
                     "type": "string"
                 },
                 "CategoryId": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "CategoryName": {
                     "type": "string"
@@ -1034,7 +1037,10 @@ var doc = `{
                     "type": "string"
                 },
                 "CategoryId": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "Name": {
                     "type": "string"

@@ -958,7 +958,10 @@
                     "type": "string"
                 },
                 "CategoryId": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "CategoryName": {
                     "type": "string"
@@ -1015,7 +1018,10 @@
                     "type": "string"
                 },
                 "CategoryId": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "Name": {
                     "type": "string"
