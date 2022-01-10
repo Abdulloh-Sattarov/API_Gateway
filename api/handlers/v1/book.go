@@ -2,6 +2,7 @@ package v1
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -31,6 +32,7 @@ func (h *handlerV1) CreateBook(c *gin.Context) {
 	)
 	jspbMarshal.UseProtoNames = true
 	err := c.ShouldBindJSON(&body)
+	fmt.Println(body)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": err.Error(),
